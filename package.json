@@ -6,7 +6,7 @@
     "start": "npm run build && node dist/bin/www",
     "build": "rimraf dist/ && babel app/ --out-dir dist",
     "watch:dev": "nodemon",
-    "test": "mocha --reporter spec --require @babel/register test/*.js --exit"
+    "test": "nyc mocha --reporter spec --require @babel/register test/*.js --exit"
   },
   "nodemonConfig": {
     "exec": "npm run start",
@@ -54,6 +54,7 @@
     "@babel/register": "^7.9.0",
     "chai": "^4.2.0",
     "mocha": "^7.1.1",
-    "nodemon": "^2.0.2"
+    "nodemon": "^2.0.2",
+    "nyc": "^15.0.1"
   }
 }
