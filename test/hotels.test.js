@@ -18,6 +18,9 @@ describe("Routes", () => {
                     res.body.should.be.a('object');
                     expect(res.body.status.code).equal(0);
                     done();
+                 })
+                 .catch(err => {
+                     done();
                  });
         });
         it("should give message when provide wrong endpoint", (done) => {

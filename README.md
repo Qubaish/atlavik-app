@@ -2,6 +2,18 @@
 
 * Node version 'v13.8.0'
 
+# Travis Build Badge
+
+[![Build Status](https://travis-ci.com/Qubaish/atlavik-app.svg?branch=master)](https://travis-ci.com/Qubaish/atlavik-app)
+
+# Codeclimate
+
+* Maintainability Badge
+[![Maintainability](https://api.codeclimate.com/v1/badges/8a46eb43d9286380eb2f/maintainability)](https://codeclimate.com/github/Qubaish/atlavik-app/maintainability)
+
+* Test Coverage
+[![Test Coverage](https://api.codeclimate.com/v1/badges/8a46eb43d9286380eb2f/test_coverage)](https://codeclimate.com/github/Qubaish/atlavik-app/test_coverage)
+
 # Setting up the app in *development* mode
 
 In the root of the app:
@@ -33,7 +45,4 @@ In the root of the app:
 * GET /api/v1/hotels?sort=name
 * GET /api/v1/hotels?sort=price
 
-Travis Build Badge
-
-[![Build Status](https://travis-ci.com/Qubaish/atlavik-app.svg?branch=master)](https://travis-ci.com/Qubaish/atlavik-app)
 

@@ -1,13 +1,12 @@
 import express from "express";
 require('dotenv').config();
 import path from 'path';
-import { urlencoded, json, raw } from "body-parser";
+import { urlencoded, json } from "body-parser";
 import hotels from "./routes/api/hotels";
 const app = express();
 import cors from 'cors';
 
 // Bodyparser middleware
-// app.use(raw());
 app.use(json());
 app.use(
   urlencoded({
@@ -43,12 +42,12 @@ app.response.error = function error(message) {
   });
 };
 
-// app.use( (req, res, next) => {
-//   var err = new Error('Not Found');
-//   err.status = 404;
-//   res.json({'errors': {
-//     message: err.message
-//   }});
-// });
+app.use( (req, res, next) => {
+  var err = new Error('Not Found');
+  err.status = 404;
+  res.json({'errors': {
+    message: err.message
+  }});
+});
 
 module.exports = app;
