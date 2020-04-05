@@ -4,13 +4,12 @@ node_js:
   - 'node'
   - 'lts/*'
 
-
-
 addons:
     code_climate:
         repo_token: 17ec5d4e6aec2a05d8edffba4a4aed77cdec42194c4a7499c57d92541379699a
 script:
-  - istanbul cover node_modules/mocha/bin/_mocha -- -R spec
+  - npm run istanbul
+  - npm run build
 
 before_script:
   - npm install codeclimate-test-reporter istanbul -g

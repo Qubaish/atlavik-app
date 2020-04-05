@@ -7,7 +7,8 @@
     "build": "rimraf dist/ && babel app/ --out-dir dist",
     "watch:dev": "nodemon",
     "test": "nyc mocha --reporter spec --require @babel/register test/*.js --exit",
-    "doc": "apidoc -i doc/api -o doc/apiDoc/"
+    "doc": "apidoc -i doc/api -o doc/apiDoc/",
+    "istanbul": "istanbul cover node_modules/mocha/bin/_mocha -- -R spec --require @babel/register"
   },
   "nodemonConfig": {
     "exec": "npm run start",
@@ -24,7 +25,7 @@
   },
   "apidoc": {
     "title": "Hotels Api",
-    "url" : "https://github.com/Qubaish/atlavik-app"
+    "url": "https://github.com/Qubaish/atlavik-app"
   },
   "engines": {
     "node": "13.8.0",
@@ -59,6 +60,7 @@
     "@babel/register": "^7.9.0",
     "apidoc": "^0.20.1",
     "chai": "^4.2.0",
+    "istanbul": "^0.4.5",
     "mocha": "^7.1.1",
     "nodemon": "^2.0.2",
     "nyc": "^15.0.1"
