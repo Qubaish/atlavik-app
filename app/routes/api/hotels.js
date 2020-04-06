@@ -29,29 +29,30 @@ const filterResults = (params, list) => {
     return data;
 }
 
-const getHotels = () => {
-    return axios.get(HOTELS_API_ENDPOINT);
+const getHotels = async () => {
+    const response = await axios.get(HOTELS_API_ENDPOINT);
+    const results  = response.data;
+    Hash[key] = results.hotels;
+    return results.hotels;
 }
 
 router.get('/', async (req, res) => {
-    let results = [];
     const queryParams = Object.keys(req.query);
 
-    if (!isEmpty(queryParams) && !isEmpty(Hash[key])) { // only for searching
-            console.log("inside hash");
+    if (!isEmpty(queryParams)) { // This block is only for filtering
+            if(isEmpty(Hash[key])){
+                await getHotels();
+            }
             const results = filterResults(req.query, Hash[key]);
             res.success(results);
     } else {
-        console.log('inside call')
         try {
-            const response = await getHotels();
-            results = response.data;
-            Hash[key] = results.hotels;
-            res.success(results.hotels);
+            const response = await getHotels(); // for filtering storing data in hash
+            res.success(response);
     } catch (error) {
-        console.log(error);
-        res.error(error);
-    }
+            console.log(error);
+            res.error(error);
+        }
     }
     
 });

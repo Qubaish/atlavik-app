@@ -14,15 +14,19 @@
 * Test Coverage
 [![Test Coverage](https://api.codeclimate.com/v1/badges/8a46eb43d9286380eb2f/test_coverage)](https://codeclimate.com/github/Qubaish/atlavik-app/test_coverage)
 
+# For Test Cases
+* npm run test
+
 # Setting up the app in *development* mode
 
 In the root of the app:
 * npm install
 * npm run watch:dev
+* API URL : http://localhost:5000/api/v1/hotels
 
-# For Test Cases
 
-* npm test
+# Endpoint API to fetch hotels
+* <a href="https://my-json-server.typicode.com/qubaish/demo/db">https://my-json-server.typicode.com/qubaish/demo/db</a>
 
 # API Documentation
 

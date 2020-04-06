@@ -2,7 +2,7 @@ import moment from 'moment';
 import { DATE_FORMAT } from '../config/keys';
 
 export const searchByName = (name, list) => {
-    return name ? list.filter(h => h.name === name) : list;
+    return name ? list.filter(h => h.name.includes(name)) : list;
 }
 
 export const searchByCity = (city, list) => {
